@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get 'articles/:id' => "articles#show", as: "article"
   get 'category/:id/articles/new' => "articles#new", as: "articles_new"
   post 'articles' => "articles#create", as: "articles_create"
+  get 'articles/:id/edit' => "articles#edit", as: "articles_edit"
+  patch 'articles/:id' => "articles#update", as: "articles_update"
+  delete 'articles/:id' => "articles#delete", as: "articles_delete"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

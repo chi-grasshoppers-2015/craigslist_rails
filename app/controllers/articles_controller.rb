@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @category = @article.category
   end
 
   def new
@@ -19,8 +20,21 @@ class ArticlesController < ApplicationController
     redirect_to @article
   end
 
-  def update
+  def edit
+    @article = Article.find(params[:id])
+  end
 
+  def update
+    @article = Article.find(params[:id])
+    @article.update_attributes(article_params)
+    redirect_to @article
+  end
+
+  def delete
+    @article = Article.find(params[:id])
+    @category = @article.category
+    @article.destroy!
+    redirect_to @category
   end
 
   private

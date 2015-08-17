@@ -1,3 +1,6 @@
 <h1><%= @article.title %></h1>
 <h2><%= @article.category.name %></h2>
 <h2><%= @article.body %></h2>
+<h6><%= link_to "Edit Article", articles_edit_path %></h6>
+<h6><%= link_to "Delete Article?", articles_delete_path, method: :delete, data: {confirm: "Are you sure?"} %></h6>
+<h6><%= link_to "Back", @category %></h6>
