@@ -1,4 +1,9 @@
 <h1><%= @category.name %></h1>
+<h2><%= link_to "New article", articles_new_path %>
 
-<h2><%= link_to "Edit Category", categories_edit_path %></h2>
-<h2><%= link_to "Back", categories_path %></h2>
+<h6><%= link_to "Edit Category", categories_edit_path %></h6>
+<h6><%= link_to "Delete Category?", categories_delete_path, method: :delete, data: {confirm: "Are you sure?"} %></h6>
+<h6><%= link_to "Back", categories_path %></h6>
+<% @articles.each do |article|  %>
+<h2><%= link_to article.title, article %></h2>
+<% end %>

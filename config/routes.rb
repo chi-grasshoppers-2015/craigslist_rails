@@ -6,6 +6,13 @@ Rails.application.routes.draw do
   get 'categories/:id' => 'categories#show', as: "category"
   get 'categories/:id/edit' => 'categories#edit', as: "categories_edit"
   patch 'categories/:id' => "categories#update", as: "categories_update"
+  delete 'categories/:id' => 'categories#delete', as: "categories_delete"
+
+  # get 'categories/:id/articles' => "articles#index"
+  get 'articles/:id' => "articles#show", as: "article"
+  get 'category/:id/articles/new' => "articles#new", as: "articles_new"
+  post 'articles' => "articles#create", as: "articles_create"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
