@@ -1,0 +1,12 @@
+<h1>Login</h1>
+<%= form_for @user, url: {action: "authenticate"} do |f| %>
+ <%= f.label :email %><br>
+ <%= f.text_field :email %><br>
+ <br>
+ <%= f.label :password %><br>
+ <%= f.password :password %><br>
+ <br>
+ <%= f.submit %>
+
+
+<% end %>
