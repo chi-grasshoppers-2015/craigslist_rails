@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  get 'listings/index'
+  root 'categories#index'
+  get 'categories/index', as: "categories"
+  get 'categories/new' => 'categories#new', as: "categories_new"
+  post 'categories' => 'categories#create', as: "categories_create"
+  get 'categories/:id' => 'categories#show', as: "category"
+  get 'categories/:id/edit' => 'categories#edit', as: "categories_edit"
+  patch 'categories/:id' => "categories#update", as: "categories_update"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
